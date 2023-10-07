@@ -8,7 +8,7 @@ In this project, you will develop a simple command-line tool that can perform ne
 - [2. NETWORK PING TOOL](https://github.com/FF-Industries/CCN_project/blob/main/README.md#2-network-ping-tool)
 - [3. PORT SCANNER TOOL ](https://github.com/FF-Industries/CCN_project/blob/main/README.md#3-port-scanner-tool)
 - [4. TESTCASE](https://github.com/FF-Industries/CCN_project/blob/main/README.md#4-testcase)
-- [5. VERIFYING THE RESULT WITH WIRESHARK](https://github.com/FF-Industries/ASIC_PES-CLASS/blob/main/README.md#day-5)
+- [5. VERIFYING THE RESULT WITH WIRESHARK](https://github.com/FF-Industries/CCN_project/blob/main/README.md#5-verifying-the-result-with-wireshark)
 - [6. DISCUSSION](https://github.com/FF-Industries/ASIC_PES-CLASS/blob/main/README.md#day-6)
 - [7. CONCLUSION](https://github.com/FF-Industries/ASIC_PES-CLASS/blob/main/README.md#day-6)
   
