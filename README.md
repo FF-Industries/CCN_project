@@ -2,6 +2,16 @@
 
 In this project, you will develop a simple command-line tool that can perform network pings and scan open ports on remote hosts. This project will help you learn the basics of network programming and socket operations.
 
+
+## CONTENT :
+- [1. INTRODUCTION](https://github.com/FF-Industries/ASIC_PES-CLASS/blob/main/README.md#day-1)
+- [2. NETWORK PING TOOL](https://github.com/FF-Industries/ASIC_PES-CLASS/blob/main/README.md#day-2)
+- [3. PORT SCANNER TOOL ](https://github.com/FF-Industries/ASIC_PES-CLASS/blob/main/README.md#day-3)
+- [4. TESTCASE](https://github.com/FF-Industries/ASIC_PES-CLASS/blob/main/README.md#day-4)
+- [5. VERIFYING THE RESULT WITH WIRESHARK](https://github.com/FF-Industries/ASIC_PES-CLASS/blob/main/README.md#day-5)
+- [6. DISCUSSION](https://github.com/FF-Industries/ASIC_PES-CLASS/blob/main/README.md#day-6)
+- [7. CONCLUSION](https://github.com/FF-Industries/ASIC_PES-CLASS/blob/main/README.md#day-6)
+  
 ## 1. INTRODUCTION
 
 The field of computer networking is pivotal in today's interconnected world, forming the backbone of global communication and data exchange. Understanding and monitoring the health of a network, as well as identifying potential vulnerabilities, are essential aspects of network management and security. In this context, the "Network Ping and Port Scanner Tool" project has been undertaken as part of the Computer Communication Network course, with the primary objective of developing a versatile and practical tool for network administrators and security professionals.
@@ -103,6 +113,8 @@ Analysis : NEEDS TO BE FILLED
 Analysis : NEEDS TO BE FILLED
 
 ## 5. VERIFYING THE RESULT WITH WIRESHARK
+
+NEEDS TO BE FILLED
 
 ## 6. DISCUSSION 
 
