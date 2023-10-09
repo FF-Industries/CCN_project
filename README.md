@@ -223,6 +223,43 @@ if __name__ == "__main__":
     except ValueError:
         print("Invalid input. Please enter a valid IP address and port numbers.")
 ```
+
+#### CODE EXPLANATION :
+
+* A raw socket is a type of network socket that allows low-level access to network packets, enabling applications to send and receive network data at a raw, protocol-specific level. Unlike higher-level sockets, such as TCP or UDP sockets, which provide abstractions for common network protocols, raw sockets provide direct access to the data link layer (Layer 2) and network layer (Layer 3).
+* A raw socket icmp_socket is created using the IPv4 protocol (socket.AF_INET)and ICMP protocol (socket.IPPROTO_ICMP).
+* The various parameters for the ICMP Echo Request packet, including the ICMP type (8 for Echo Request), code (0 for Echo Request), checksum (initially set to 0), identifier (a chosen value, 12345 in this case), and sequence number (1) is set. 
+* The ICMP checksum for the ICMP header is calculated. It first packs the header values into a binary format using struct.pack. Then, it iterates through the header bytes in pairs (16 bits each) and calculates the checksum by adding them together. The final checksum value is calculated as a 16-bit one's complement. The format string '!BBHHH' specifies the data types and their order in the packed binary data.
+* Initialize the variable icmp_checksum to 0. This variable will be used to accumulate the checksum value. The loop iterates through the bytes of the packed ICMP header in steps of 2 (16 bits at a time). Each iteration processes a 16-bit word. For each 16-bit word (two bytes), it left-shifts the first byte by 8 bits (equivalent to multiplying by 256) to obtain the most significant byte, adds the second byte (least significant byte) to the result and accumulates the result in the icmp_checksum variable.
+* After processing all 16-bit words, it right-shifts the icmp_checksum variable by 16 bits to extract any carry bits that might have been generated during addition, performs a bitwise AND operation with 0xFFFF to ensure that the result is a 16-bit value, adds the carry bits to the result of the bitwise AND operation and the final result is stored in icmp_checksum
+* The one's complement of the final checksum value is taken and it  performs a bitwise AND operation with 0xFFFF to ensure that the result is a 16-bit value. This step is necessary to get the one's complement checksum.
+* The ICMP header with the calculated checksum value is updated using struct.pack. It also uses socket.htons to convert the checksum value to network byte order (big-endian).
+* The ICMP packet (containing the header) is sent to the specified target IP address using the sendto method of the raw socket.
+* A timeout of 2 seconds is set for receiving an ICMP Echo Reply packet, records the start time, receives the ICMP Echo Reply packet using recvfrom, and records the end time.
+* The round-trip time (RTT) is calculated by subtracting the start time from the end time and then converts the result to milliseconds.
+* Finally, the code prints the received ICMP Echo Reply, including the target IP and the calculated RTT.
+* The except section catches and handles any socket-related errors that may occur during the execution of the code and prints an error message.
+* The finally block ensures that the raw socket is closed, whether the code succeeds or encounters an exception to release network resources properly.
+* The function port_scanner takes three parameters: target_ip (the IP address of the target system), start_port (the starting port to scan), and end_port (the ending port to scan). It will scan ports within the specified range.
+* It prints a message indicating that the port scanning process is starting, including the target IP address.
+* open_ports is an empty list used to store the list of open ports found during the scan.
+* The loop iterates through the specified range of ports, from start_port to end_port.
+* For each port in the loop, it creates a socket object using socket.AF_INET (IPv4) and socket.SOCK_STREAM (TCP socket) to establish a connection.
+* It sets a timeout of 1 second for the connection attempt to prevent the scanner from waiting too long for unresponsive ports.
+* It attempts to connect to the target IP and port using connect_ex(). The result is stored in the result variable. A result of 0 indicates a successful connection, meaning the port is open.
+* If the connection result is 0, it means the port is open. The port number is added to the open_ports list, and a message is printed indicating that the port is open.
+* After attempting to connect to the port, the socket is closed to release resources.
+* The code handles two types of exceptions:
+* KeyboardInterrupt: If the user presses Ctrl+C during the scan, it       prints a message and exits the function.
+* socket.error: If there is an error while connecting to a port, it is caught and ignored. This is typically due to a closed or unreachable port
+* Finally, after scanning all the ports, the code checks if any open ports were found. If open ports are detected, it prints the list of open ports; otherwise, it reports that no open ports were found.
+* if __name__ == "__main__ checks whether the script is being run as the main program. Code within this block will only execute if the script is run directly, not if it is imported as a module.
+* The user is prompted to enter a target IP address and stores it in the target_ip variable.
+* It calls a function network_ping  to perform network ping to the specified target IP address. This function sends ICMP Echo Request packets to the target and measures the round-trip time (RTT) for replies.
+* The user is prompted to enter the starting and ending port numbers for port scanning. It converts the input to integers and stores them in start_port and end_port.
+* Then, it calls a function port_scanner to scan the specified range of ports on the target IP address for open ports.
+* ValueError exception is handled, which occurs if the user enters an invalid IP address or non-integer values for the port numbers. It prints an error message in case of invalid input.
+
 ## 4. TESTCASE
 
 ### 4.1 VALID IP ADDRESS INPUT 
