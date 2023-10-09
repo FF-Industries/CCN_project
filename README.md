@@ -227,7 +227,7 @@ if __name__ == "__main__":
 #### CODE EXPLANATION :
 
 * A raw socket is a type of network socket that allows low-level access to network packets, enabling applications to send and receive network data at a raw, protocol-specific level. Unlike higher-level sockets, such as TCP or UDP sockets, which provide abstractions for common network protocols, raw sockets provide direct access to the data link layer (Layer 2) and network layer (Layer 3).
-* A raw socket **icmp_socket** is created using the IPv4 protocol (socket.AF_INET)and ICMP protocol (socket.IPPROTO_ICMP).
+* A raw socket icmp_socket is created using the IPv4 protocol (socket.AF_INET)and ICMP protocol (socket.IPPROTO_ICMP).
 * The various parameters for the ICMP Echo Request packet, including the ICMP type (8 for Echo Request), code (0 for Echo Request), checksum (initially set to 0), identifier (a chosen value, 12345 in this case), and sequence number (1) is set. 
 * The ICMP checksum for the ICMP header is calculated. It first packs the header values into a binary format using struct.pack. Then, it iterates through the header bytes in pairs (16 bits each) and calculates the checksum by adding them together. The final checksum value is calculated as a 16-bit one's complement. The format string '!BBHHH' specifies the data types and their order in the packed binary data.
 * Initialize the variable icmp_checksum to 0. This variable will be used to accumulate the checksum value. The loop iterates through the bytes of the packed ICMP header in steps of 2 (16 bits at a time). Each iteration processes a 16-bit word. For each 16-bit word (two bytes), it left-shifts the first byte by 8 bits (equivalent to multiplying by 256) to obtain the most significant byte, adds the second byte (least significant byte) to the result and accumulates the result in the icmp_checksum variable.
@@ -266,7 +266,12 @@ if __name__ == "__main__":
 
 ![WhatsApp Image 2023-10-07 at 17 00 52_c0b7f469](https://github.com/FF-Industries/CCN_project/assets/136846161/58a17449-0671-4ed9-95f2-394d5a5f1ec6)
 
-Analysis : NEEDS TO BE FILLED
+#### Analysis :
+
+* Port 21 is a reserved port in TCP/IP networking that's used for File Transfer Protocol (FTP) control messages.
+* Port 53 is used by the Domain Name System (DNS).
+* Port 443 is the default port for HTTPS traffic.
+* Port 853 is used for DNS over TLS (Transport Layer security)  (DoT). 
 
 ### 4.2 INVALID IP ADDRESS INPUT
 
