@@ -271,35 +271,48 @@ if __name__ == "__main__":
 * Port 21 is a reserved port in TCP/IP networking that's used for File Transfer Protocol (FTP) control messages.
 * Port 53 is used by the Domain Name System (DNS).
 * Port 443 is the default port for HTTPS traffic.
-* Port 853 is used for DNS over TLS (Transport Layer security)  (DoT). 
+* Port 853 is used for DNS over TLS (Transport Layer security)  (DoT).
+* On pinging the Google DNS server 8.8.8.8 the Round Trip Time (RTT) as calculated by the code was found to be 70.57 ms.
+* When the port numbers were scanned from 1 to 1024 the port numbers 21, 53, 443, 853 which are pre-defined port numbers were found to be open. 
 
 ### 4.2 INVALID IP ADDRESS INPUT
 
 ![WhatsApp Image 2023-10-07 at 17 00 53_663b06cc](https://github.com/FF-Industries/CCN_project/assets/136846161/756383d4-e1e3-483b-8a70-5486aaabb353)
 
-Analysis : NEEDS TO BE FILLED
+#### Analysis :
+
+* As we know that 256.256.256.256 is a broadcast address our code failed to ping to the broadcast address and returned an error. getaddrinfo function is a part of the Python socket module and is used to perform DNS (Domain Name System) resolution and retrieve network address information for a given hostname or service name.
+* On broadcast network there are no open ports because In a broadcast network, communication is more like broadcasting a message to everyone on the network segment, and there is no direct targeting of specific ports on individual devices.
 
 ### 4.3 NO ARGUMENTS PROVIDED
 
 ![WhatsApp Image 2023-10-07 at 17 00 53_ab3003b2](https://github.com/FF-Industries/CCN_project/assets/136846161/596f4bef-0af8-4a7d-a238-35764ddec908)
 
-Analysis : NEEDS TO BE FILLED
+#### Analysis :
+
+* When no IP address is given there are no packets exchanged and in turn there cannot be a ping operation which leads to an error.
+* When no port number is specified to scan the ports, it’s an invalid input which leads to an error message being displayed.
 
 ### 4.4 PORT RANGE INPUT
 
 ![WhatsApp Image 2023-10-07 at 17 00 54_53551bf9](https://github.com/FF-Industries/CCN_project/assets/136846161/2107c218-a149-4280-bb29-0276e7630f48)
 
-Analysis : NEEDS TO BE FILLED
+#### Analysis : 
+
+* On pinging for the IP address of Google DNS Server 8.8.8.8 the RTT was found to be 55.41ms.
+* As we know that the well known standard open ports are 21, 53, 443, 853 when we scan for open ports between 1-20 since there are no open ports available the message “no open ports found” is displayed.
 
 ### 4.5 TIMEOUT HANDLING 
 
 ![WhatsApp Image 2023-10-07 at 22 17 32_6576a9e6](https://github.com/FF-Industries/CCN_project/assets/136846161/045bc5df-e5a8-4d2c-90ff-80cb4937381d)
 
-Analysis : NEEDS TO BE FILLED
+#### Analysis : 
+
+* We get a timeout while trying to ping an IP address like 192.168.1.100, it typically means that the target host did not respond to the ICMP Echo Request packet within the specified timeout period. So the message “failed: timed out” is displayed. 
 
 ## 5. VERIFYING THE RESULT WITH WIRESHARK
 
-NEEDS TO BE FILLED
+
 
 ## 6. DISCUSSION 
 
