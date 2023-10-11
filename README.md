@@ -312,7 +312,34 @@ if __name__ == "__main__":
 
 ## 5. VERIFYING THE RESULT WITH WIRESHARK
 
-PENDING
+<img width="619" alt="image" src="https://github.com/FF-Industries/CCN_project/assets/136846161/850fd2b5-3212-48ed-a90d-8bc1fd310b9b">
+
+<img width="799" alt="image" src="https://github.com/FF-Industries/CCN_project/assets/136846161/2f96cb1a-3324-4834-95e0-eef250f14cbb">
+
+The Round Trip Time (RTT) from the Wireshark was found to be 16.414247 - 16.328420 = 0.085827 sec which is approximately equal to the RTT found by the Python script. The little difference may bedue to the conversion of time from seconds to milliseconds in the Python script.
+
+<img width="797" alt="image" src="https://github.com/FF-Industries/CCN_project/assets/136846161/6768c9dc-e30f-4143-a50c-631bd4b1c76e">
+
+<img width="796" alt="image" src="https://github.com/FF-Industries/CCN_project/assets/136846161/ec5e0f9c-07ed-4643-b9cc-a4df1e8921e3">
+
+Port scanning for ports 53,54 and 55
+
+<img width="760" alt="image" src="https://github.com/FF-Industries/CCN_project/assets/136846161/3f0d3c4e-3ff1-432b-99b7-550ae0d9988e">
+
+Port scanning for ports 443, 444, 445 and 446
+
+<img width="766" alt="image" src="https://github.com/FF-Industries/CCN_project/assets/136846161/060fc617-5a5f-45f1-a111-969291db40a3">
+
+Port scanning for ports 853, 854, 855 and 856
+
+<img width="767" alt="image" src="https://github.com/FF-Industries/CCN_project/assets/136846161/499c5e8b-3802-43ca-b6a4-47f499939b03">
+
+Port scanning for ports 1021, 1022, 1023 and 1024
+
+<img width="796" alt="image" src="https://github.com/FF-Industries/CCN_project/assets/136846161/9d305985-0cce-4ab9-93ab-c2b5880119a1">
+
+The port scanner returns the open ports by sending a TCPconnection request to all the port numbers in the specified range and declares that the port is open only if it receives the TCP
+connection reply. As we can see from the Wireshark packet window that the TCP connection request has been sent to all the ports but the TCP connection reply has been received only from the openports.
 
 ## 6. DISCUSSION 
 
